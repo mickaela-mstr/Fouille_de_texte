@@ -1,10 +1,10 @@
 # Projet Fouille de Texte
-Projet de classification des chansons par genre selon leurs paroles
+Projet de classification automatique des chansons par genre musical selon leurs paroles
 
 ---
 ### Objectif 🎯
 
-Ce projet vise à prédire le **genre musical** (pop, rap, hip-hop) d'une chanson en analysant uniquement ses **paroles**. L'objectif est d'explorer des approches de fouille de textes pour extraire des caractéristiques linguistiques et émotionnelles pertinentes permettant de différencier les genres musicaux.
+Ce projet vise à prédire le genre musical (pop, rap, hip-hop) d'une chanson en analysant uniquement ses paroles (son contenu lexical)
 
 ---
 ### Données 
@@ -18,9 +18,9 @@ Ce projet vise à prédire le **genre musical** (pop, rap, hip-hop) d'une chanso
 ### Méthodologie
 
 **Prétraitement** des données :
-   - Nettoyage des paroles
+   - Nettoyage des textes (minuscule, ponctuation, etc.)
    - Tokenisation
-   - Vectorisation via Bag-of-Words et TF-IDF potentiellement
+   - Vectorisation avec Bag-of-Words ou TF-IDF potentiellement
   
 **Classification** :
    - Algorithmes possibles :
@@ -31,6 +31,6 @@ Ce projet vise à prédire le **genre musical** (pop, rap, hip-hop) d'une chanso
 
 **Outils**
 - Python (pandas, scikit-learn)
-- Weka (.arff)
+- Weka pour la classification (format `.arff`)
 - Hugging Face `datasets` potentiellement
 
