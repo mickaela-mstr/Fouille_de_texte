@@ -11,7 +11,7 @@ Projet universitaire de fouille de texte visant à prédire le genre musical d'u
 
 ## Organisation
 - `corpus/` — Textes des chansons classés par genre
-- song_title_artist liste de chansons et d'artistes pour le genre R&B
+- `song_title_artist` liste de chansons et d'artistes pour le genre R&B
 - `scraper_script.py` — Script pour récupérer automatiquement les paroles via l'API Genius
 - `journal.md` — Carnet de bord personnel retraçant la progression du projet
 - `README.md` — Présentation générale du projet
