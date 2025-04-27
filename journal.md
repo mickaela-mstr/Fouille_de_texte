@@ -1,4 +1,4 @@
-# Journal de Projet — Fouille de Texte
+# Journal de branche
 
 ### Objectif 
 - Utiliser des sources fiables pour sélectionner des titres représentatifs du genre
