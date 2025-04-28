@@ -21,3 +21,4 @@
 
 ## Dépot du "corpus_rap" obtenu avec ```scrap_rap.py``` :
 - Le corpus créé à partir du script précédent est déposé sur le git pour pouvoir être utilisé pour la suite.
+- Une petite modification manuelle a été nécessaire car la ponctuation "..." empêchait le dépot de l'un des fichiers du corpus nommé "Common_Love_is....txt", j'ai modifié également le script pour retirer ce type de ponctuation et éviter que cela ne se reproduise 
