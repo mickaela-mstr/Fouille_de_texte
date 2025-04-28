@@ -13,4 +13,11 @@
 - Testé sur une liste d'artistes de rap aléatoire donnés par l'utilisateur.
 
 ### songs_artists_rap.py :
-- 
+- Le scrapping pour le nom des artistes est beaucoup plus complexe car l'API de genius renvoie des noms d'artistes aléatoires et ne peut donc pas être utilisé.
+- J'ai tenté de scrapper les noms directement sur Wikipédia mais les informations renvoyées ne sont pas ce que j'attends.
+
+### scrap_rap.py :
+- Assemblage des deux premiers scripts indépendants qui fonctionnent bien su'ils prennent énormément de temps. Si j'arrive à faie fonctionner correctement ```songs_artists_rap.py``` je complèterai éventuellement ce script plus tard afin qu'il puisse scrapper les données des artistes, des titres et des paroles automatiquement de A à Z.
+
+## Dépot du "corpus_rap" obtenu avec ```scrap_rap.py``` :
+- Le corpus créé à partir du script précédent est déposé sur le git pour pouvoir être utilisé pour la suite.
