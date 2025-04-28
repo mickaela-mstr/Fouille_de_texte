@@ -45,7 +45,7 @@ for title, artist in rap_songs:
     song = genius.search_song(title, artist)
     if song:
         # Save lyrics to a text file
-        file_path = os.path.join(output_dir, f"={artist.replace(' ', '_')}_{title.replace(' ', '_').replace('/', '_')}.txt")
+        file_path = os.path.join(output_dir, f"{artist.replace(' ', '_')}_{title.replace(' ', '_').replace('/', '_')}.txt")
         with open(file_path, "w", encoding="utf-8") as file:                
             file.write(song.lyrics)
         print(f"Lyrics saved to {file_path}")
