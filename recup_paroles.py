@@ -1,10 +1,7 @@
 import lyricsgenius 
-import time
 import os
 import argparse
 from tqdm import tqdm
-
-
 
 ### POUR RÉCUPÉRER À PARTIR DE L'ARTISTE ###
 # On utilise le nom du gadjo pour choper ses chansons
@@ -32,10 +29,6 @@ def searchbysongs(songs, genius, genre):
     #     ("Levitating", "Dua Lipa"),
     #     ("Bad Guy", "Billie Eilish"),
     # ]
-
-    # Création du dossier de sortie
-    output_dir = f"{genre}_song_lyrics"
-    os.makedirs(output_dir, exist_ok=True)
 
     # Récupération des paroles avec gestion des erreurs
     for title, artist in tqdm(songs):
