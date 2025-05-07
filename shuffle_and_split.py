@@ -3,7 +3,7 @@ import random
 import shutil
 
 # Configuration
-input_root  = "corpus_clean"
+input_root  = "corpus"
 train_root  = "corpus_train"
 test_root   = "corpus_test"
 train_ratio = 0.8  # 80% train, 20% test
