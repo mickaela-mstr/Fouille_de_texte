@@ -25,3 +25,38 @@ Un script Python `data_prep.py` a été développé pour automatiser cette étap
 Le nettoyage du texte a été confié à la fonction `clean_lyrics()`. Cette dernière avait pour rôle d’ignorer toutes les lignes de texte inutiles en amont des paroles, et de supprimer les balises comme `[Verse]`, `[Chorus]`, `[Bridge]`, etc. Cependant, avec les fichiers du genre rap, contrairement aux morceaux pop ou RnB, on avaient très rarement ces balises. Et ils incluaient presque systématiquement une première ligne non pertinente (contributeurs, tags de plateforme, etc.). Pour remédier à cela, une exception a été ajoutée dans le script : la première ligne de chaque fichier de rap est systématiquement supprimée avant tout traitement.
 
 Une fois les paroles nettoyées, elles ont été enregistrées dans un fichier CSV avec trois colonnes : `Parole` (le texte nettoyé), `Genre` (le genre musical), et `Titre + artiste` (le nom original du fichier `.txt`, permettant d’identifier la chanson). Ce fichier constitue désormais un jeu de données propre, prêt à être utilisé pour des étapes d’analyse exploratoire ou d’apprentissage automatique.
+
+
+### Premier test d'algo de classification : Analyse des résultats du modèle Random Forest
+
+#### Objectif
+
+L'objectif de ce script était de tester un algorithme d'apprentissage supervisé our classer automatiquement des paroles de chansons en trois genres musicaux.
+
+#### Prétraitement
+
+Les paroles ont été vectorisées à l’aide de la méthode TF-IDF, qui pondère les termes selon leur fréquence dans un document et leur rareté dans l’ensemble du corpus.
+
+#### Modèle entraîné
+
+Le modèle utilisé est un RandomForestClassifier de scikit-learn, un classifieur d'ensemble basé sur des arbres de décision.
+
+#### Résultats – matrice de confusion
+
+La matrice (dans le dossier matrices) montre, pour chaque genre réel (ligne), combien d’exemples ont été classés dans chaque genre prédit (colonne).
+
+* Rap : Le modèle a correctement classé 25 chansons sur 30 comme rap, avec seulement 5 erreurs. C’est la classe la mieux reconnue, ce qui peut s’expliquer par une plus grande spécificité lexicale ou structurelle des textes rap (vocabulaire plus argotique ou direct, phrases plus longues…).
+
+* Pop : Résultats mitigés. Seules 10 chansons pop ont été bien classées, tandis que **19** ont été classées à tort comme rnb. Cela suggère une forte confusion entre ces deux genres, peut-être liée à des similitudes thématiques (amour, émotions) ou lexicales.
+
+* Rnb : Le modèle a correctement identifié 26 chansons sur 37, avec des confusions notables vers pop (8 erreurs) et un peu vers **rap** (3 erreurs). Comme pour la pop, cette confusion avec pop pourrait être due à un lexique commun ou à des structures de phrases proches.
+
+#### Hypothèses
+
+* La confusion entre **pop** et **rnb** pourrait être réduite en :
+
+  * Utilisant des n-grammes (plutôt que des mots seuls) dans le `TfidfVectorizer`
+  * Ajoutant un filtrage lexical pour retirer les mots trop fréquents ou non discriminants (`max_df`, `min_df`)
+  * Introduisant une analyse sémantique plus riche (lemmatisation, entités, thèmes, etc.)
+
+
