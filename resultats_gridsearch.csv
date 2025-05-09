@@ -1,0 +1,4 @@
+Modèle,Accuracy,Meilleurs paramètres
+Naive Bayes,0.6027,{'alpha': 0.1}
+SVM,0.6644,"{'C': 1, 'kernel': 'linear'}"
+Random Forest,0.6027,"{'max_depth': 10, 'min_samples_split': 2, 'n_estimators': 200}"
