@@ -10,27 +10,21 @@ Projet universitaire de fouille de texte visant à prédire le genre musical d'u
 - Entraîner et comparer plusieurs modèles de classification (Naive Bayes, SVM)
 - Évaluer la précision de la prédiction automatique/ la capacité de généralisation des modèles
 
-## Organisation
-- `corpus/` — Textes des chansons classés par genre
-- `song_title_artist` liste de chansons et d'artistes pour le genre R&B
-- `scraper_script.py` — Script pour récupérer automatiquement les paroles via l'API Genius
-- `journal.md` — Carnet de bord personnel retraçant la progression du projet
-- `README.md` — Présentation générale du projet
-
 ## Organisation du dépôt
 
 ```
 Fouille_de_texte/
 ├── corpus/                      # Paroles brutes classées par genre
-├── corpus_clean/                # Paroles nettoyées (prétraitées)
 ├── corpus_train/                # 80% des données pour l'entraînement
 ├── corpus_test/                 # 20% des données pour le test final
-├── scripts/                     # Scripts de traitement
+├── scr/                          # Scripts de traitement
 │   ├── scraper_script.py        # Récupération des paroles via Genius
 │   ├── preprocess_corpus.py     # Nettoyage léger (balises, ponctuation, stop-words)
 │   ├── split_and_shuffle.py     # Répartition aléatoire train/test
 │   └── vectorisation.py         # Génération des fichiers ARFF pour Weka
 ├── song_list_rnb.txt            # Liste des titres et artistes R&B utilisés
+├── weka_.arff_files/            # Fichiers ARFF générés
+├── results/                     # Résultats Weka (.txt et .arff) 
 ├── journal.md                   # Carnet de bord des étapes, problèmes et ressources
 └── README.md                    # Présentation du projet
 ```
@@ -57,7 +51,7 @@ Les fichiers `.txt` seront générés sous `corpus/<genre>/`.
 4. **Vectorisation** :
 - **Sur l’ensemble pour CV** :
 ```bash
- python3 scripts/vectorisation.py corpus_clean/ all_data.arff
+ python3 scripts/vectorisation.py corpus/ all_data.arff
 ```
 - **Held-out train/test** :
 ```bash
@@ -80,7 +74,7 @@ Les fichiers `.txt` seront générés sous `corpus/<genre>/`.
 
 - Python 3
 - LyricsGenius API
-- Weka (ARFF, NaiveBayes, J48, SMO)
+- Weka (ARFF, NaiveBayes, J48, SMO, RandomForest, IBK)
 - Git & GitHub
 
 
