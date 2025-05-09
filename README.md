@@ -16,7 +16,8 @@ Nous avons constitué un corpus équilibré de 453 chansons en anglais, puis app
 ```
 .
 ├── corpus/                      # Fichiers textes bruts par genre (pop, rap, rnb)
-├── resultats/
+├── resultats_weka/              # Dossier avec les résultats de weka
+├── resultats_python/
 │   ├── wordcloud_pop.png        # Nuage de mots du genre pop
 │   ├── wordcloud_rap.png        # Nuage de mots du genre rap
 │   ├── wordcloud_rnb.png        # Nuage de mots du genre rnb
@@ -31,6 +32,7 @@ Nous avons constitué un corpus équilibré de 453 chansons en anglais, puis app
 │   ├── perf_modeles.csv
 │   └── lyrics.csv               # Corpus nettoyé prêt à être utilisé
 ├── scripts/
+    ├── shuffle_and_split.py
 │   ├── recup_paroles.py         # Récupération des paroles (API Genius)
 │   ├── data_prep.py             # Nettoyage + génération de lyrics.csv
 │   ├── nuage_mot.py             # Wordclouds par genre
