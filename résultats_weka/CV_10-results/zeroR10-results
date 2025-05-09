@@ -1,0 +1,42 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.rules.ZeroR 
+Relation:     corpus
+Instances:    316
+Attributes:   9463
+              [list of attributes omitted]
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+ZeroR predicts class value: rnb
+
+Time taken to build model: 0 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         113               35.7595 %
+Incorrectly Classified Instances       203               64.2405 %
+Kappa statistic                          0     
+Mean absolute error                      0.4438
+Root mean squared error                  0.4711
+Relative absolute error                100      %
+Root relative squared error            100      %
+Total Number of Instances              316     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.000    0.000    ?          0.000    ?          ?        0.481     0.320     pop
+                 0.000    0.000    ?          0.000    ?          ?        0.491     0.309     rap
+                 1.000    1.000    0.358      1.000    0.527      ?        0.486     0.351     rnb
+Weighted Avg.    0.358    0.358    ?          0.358    ?          ?        0.486     0.327     
+
+=== Confusion Matrix ===
+
+   a   b   c   <-- classified as
+   0   0 104 |   a = pop
+   0   0  99 |   b = rap
+   0   0 113 |   c = rnb
+

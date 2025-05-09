@@ -1,0 +1,88 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.J48 -C 0.25 -M 2
+Relation:     corpus
+Instances:    252
+Attributes:   8082
+              [list of attributes omitted]
+Test mode:    user supplied test set:  size unknown (reading incrementally)
+
+=== Classifier model (full training set) ===
+
+J48 pruned tree
+------------------
+
+verse <= 0
+|   en <= 0: rap (77.0)
+|   en > 0: rnb (3.0/1.0)
+verse > 0
+|   ariana <= 0
+|   |   broken <= 0
+|   |   |   shots <= 0
+|   |   |   |   beautiful <= 0
+|   |   |   |   |   gaga <= 0
+|   |   |   |   |   |   lookin' <= 1
+|   |   |   |   |   |   |   against <= 0
+|   |   |   |   |   |   |   |   til <= 2
+|   |   |   |   |   |   |   |   |   beyoncé <= 3
+|   |   |   |   |   |   |   |   |   |   mars <= 0
+|   |   |   |   |   |   |   |   |   |   |   touch <= 2
+|   |   |   |   |   |   |   |   |   |   |   |   lord <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   distance <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   horse <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   mad <= 0: rnb (85.0/4.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   mad > 0: pop (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   horse > 0: pop (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   distance > 0: pop (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   lord > 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   around <= 0: pop (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   around > 0: rnb (2.0)
+|   |   |   |   |   |   |   |   |   |   |   touch > 2: pop (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   mars > 0: pop (9.0/1.0)
+|   |   |   |   |   |   |   |   |   beyoncé > 3: pop (4.0)
+|   |   |   |   |   |   |   |   til > 2: pop (5.0)
+|   |   |   |   |   |   |   against > 0: pop (4.0)
+|   |   |   |   |   |   lookin' > 1: pop (6.0)
+|   |   |   |   |   gaga > 0: pop (6.0)
+|   |   |   |   beautiful > 0: pop (6.0)
+|   |   |   shots > 0: pop (6.0)
+|   |   broken > 0: pop (7.0)
+|   ariana > 0: pop (15.0)
+
+Number of Leaves  : 	19
+
+Size of the tree : 	37
+
+
+Time taken to build model: 0.6 seconds
+
+=== Evaluation on test set ===
+
+Time taken to test model on supplied test set: 0.02 seconds
+
+=== Summary ===
+
+Correctly Classified Instances          49               76.5625 %
+Incorrectly Classified Instances        15               23.4375 %
+Kappa statistic                          0.6477
+Mean absolute error                      0.1697
+Root mean squared error                  0.3837
+Relative absolute error                 38.2468 %
+Root relative squared error             81.4704 %
+Total Number of Instances               64     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.619    0.140    0.684      0.619    0.650      0.493    0.833     0.609     pop
+                 1.000    0.023    0.952      1.000    0.976      0.965    0.989     0.952     rap
+                 0.696    0.195    0.667      0.696    0.681      0.496    0.732     0.573     rnb
+Weighted Avg.    0.766    0.123    0.762      0.766    0.763      0.641    0.845     0.703     
+
+=== Confusion Matrix ===
+
+  a  b  c   <-- classified as
+ 13  0  8 |  a = pop
+  0 20  0 |  b = rap
+  6  1 16 |  c = rnb
+
