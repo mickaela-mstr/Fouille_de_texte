@@ -30,6 +30,8 @@
 - Vérifier quels morceaux n'ont pas pu être récupérés et les remplacer si besoin
 - Commencer la vectorisation des fichiers `.txt` en `.arff` pour Weka
 
+---
+
 # Journal de branche May 7 — Synchronisation Git & Évaluation des Modèles
 
 ## Synchronisation du corpus entre branches Git
@@ -82,4 +84,65 @@
 > - Prochaines étapes : 
 >   - Lancer les deux workflows (CV & held-out)  
 >   - Collecter les résultats et rédiger la section “Expériences” du rapport.
+
+---
+
+# Journal de branche May 9 —  Résultats et interprétation
+
+### 5.1 Structure du dossier `results/`
+- `CV_10-results/`  
+  Contient la sortie complète de la **10-fold cross-validation** sur l’ARFF unique (`all_data.arff`) pour chacun des classifieurs.
+- Fichiers individuels (à la racine) :  
+  - `SMOresults`  
+  - `resultJ48`  
+  - `lazyknearest-results` (IBk)  
+  - `nativebayesmultinomial`  
+  - `rules.ZeroR`
+  - `randomforest-results` 
+  Chacun renferme les métriques d’évaluation (accuracy, F-measure, AUC, matrice de confusion…) obtenues **sur le jeu de test fourni** (held-out set) avec le classifieur correspondant.
+
+### 5.2 Premier benchmark : 10-fold cross-validation
+1. **Vectorisation**  
+   ```bash
+   python3 vectorisation.py corpus/ all_data.arff
+
+## Exécution
+- Dans Weka Explorer → Classify → test options → Cross-validation (10 folds).
+
+### Classifieurs testés :
+- `NaiveBayesMultinomial`
+- `SMO`
+- `J48` 
+- `IBk` (k-Nearest Neighbors)
+- `RandomForest`
+- `ZeroR`
+
+### Objectif
+Obtenir une estimation rapide et stable des performances moyennes de chaque modèle sans préparer de split manuel. <br>
+
+### 5.3 Évaluation finale : held-out test set (80/20 + lexicon partagé) <br>
+
+**Split & shuffle** <br>
+python3 split_and_shuffle.py <br>
+→ corpus_train/ (80 %) et corpus_test/ (20 %) <br>
+
+**Train ARFF** <br>
+python3 vectorisation.py corpus_train/ train.arff
+
+**Test ARFF** <br>
+python3 vectorisation.py --lexicon train.arff corpus_test/ test.arff <br>
+
+**L’option --lexicon train.arff garantit que test.arff utilise exactement le même vocabulaire (colonnes) que train.arff.
+** <br>
+
+### Dans Weka <br>
+Ouvrir train.arff → Classify → Test options → “Supplied test set” → charger test.arff. <br>
+Lancer pour chacun des classifieurs listés ci-dessus. <br>
+
+### Métriques comparées
+- `Accuracy` (taux de classification correct)
+- `F-measure` (par classe et moyenne)
+- `AUC` (ROC Area)
+- `Matrice de confusion`
+
 
