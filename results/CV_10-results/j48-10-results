@@ -1,0 +1,97 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.J48 -C 0.25 -M 2
+Relation:     corpus
+Instances:    316
+Attributes:   9463
+              [list of attributes omitted]
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+J48 pruned tree
+------------------
+
+verse <= 0
+|   de <= 0: rap (96.0)
+|   de > 0
+|   |   - <= 0: rap (2.0)
+|   |   - > 0: rnb (3.0)
+verse > 0
+|   ariana <= 0
+|   |   mars' <= 0
+|   |   |   gaga <= 0
+|   |   |   |   against <= 0
+|   |   |   |   |   lookin' <= 1
+|   |   |   |   |   |   mars <= 0
+|   |   |   |   |   |   |   broken <= 0
+|   |   |   |   |   |   |   |   til <= 1
+|   |   |   |   |   |   |   |   |   fingers <= 0
+|   |   |   |   |   |   |   |   |   |   hurts <= 2
+|   |   |   |   |   |   |   |   |   |   |   you <= 9
+|   |   |   |   |   |   |   |   |   |   |   |   single <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   chose <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   interview <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   before <= 0: pop (16.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   before > 0: rnb (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   interview > 0: rnb (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   chose > 0: rnb (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   single > 0: rnb (5.0)
+|   |   |   |   |   |   |   |   |   |   |   you > 9
+|   |   |   |   |   |   |   |   |   |   |   |   brand <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   asking <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   horse <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   won' <= 2: rnb (85.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   won' > 2
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   never <= 0: pop (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   never > 0: rnb (4.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   horse > 0: pop (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   asking > 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   and <= 14: rnb (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   and > 14: pop (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   brand > 0: pop (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   hurts > 2: pop (5.0/1.0)
+|   |   |   |   |   |   |   |   |   fingers > 0: pop (5.0/1.0)
+|   |   |   |   |   |   |   |   til > 1: pop (9.0/2.0)
+|   |   |   |   |   |   |   broken > 0: pop (8.0/1.0)
+|   |   |   |   |   |   mars > 0: pop (10.0/1.0)
+|   |   |   |   |   lookin' > 1: pop (7.0)
+|   |   |   |   against > 0: pop (6.0)
+|   |   |   gaga > 0: pop (8.0)
+|   |   mars' > 0: pop (7.0)
+|   ariana > 0: pop (20.0)
+
+Number of Leaves  : 	25
+
+Size of the tree : 	49
+
+
+Time taken to build model: 0.58 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         241               76.2658 %
+Incorrectly Classified Instances        75               23.7342 %
+Kappa statistic                          0.6432
+Mean absolute error                      0.1606
+Root mean squared error                  0.3744
+Relative absolute error                 36.1832 %
+Root relative squared error             79.4814 %
+Total Number of Instances              316     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.644    0.160    0.663      0.644    0.654      0.488    0.817     0.645     pop
+                 0.970    0.009    0.980      0.970    0.975      0.963    0.990     0.973     rap
+                 0.690    0.192    0.667      0.690    0.678      0.494    0.808     0.645     rnb
+Weighted Avg.    0.763    0.124    0.764      0.763    0.763      0.639    0.868     0.748     
+
+=== Confusion Matrix ===
+
+  a  b  c   <-- classified as
+ 67  0 37 |  a = pop
+  1 96  2 |  b = rap
+ 33  2 78 |  c = rnb
+
