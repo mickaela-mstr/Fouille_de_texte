@@ -26,6 +26,17 @@ Le nettoyage du texte a été confié à la fonction `clean_lyrics()`. Cette der
 
 Une fois les paroles nettoyées, elles ont été enregistrées dans un fichier CSV avec trois colonnes : `Parole` (le texte nettoyé), `Genre` (le genre musical), et `Titre + artiste` (le nom original du fichier `.txt`, permettant d’identifier la chanson). Ce fichier constitue désormais un jeu de données propre, prêt à être utilisé pour des étapes d’analyse exploratoire ou d’apprentissage automatique.
 
+## Analyse préliminaire du corpus : les nuages de mots
+
+Avant d’aborder l’évaluation des modèles de classification, une première exploration du corpus a été menée à partir de nuages de mots générés par genre musical. Ces visualisations permettent d’identifier les régularités lexicales dominantes dans chaque classe et d’anticiper les difficultés potentielles que pourraient rencontrer les algorithmes.
+
+Le nuage de mots du genre pop met en évidence un lexique centré sur les sentiments, les relations personnelles et les émotions. Les termes les plus visibles concernent des actions affectives ou des états émotionnels comme "love", "feel", "want", "make", ou encore "kiss" et "heart". Ce lexique exprime un registre plutôt doux, introspectif et orienté vers l’intimité, avec une tonalité générale positive ou mélancolique.
+
+Le nuage rnb présente un registre très similaire. On y retrouve des verbes liés à l’attachement ou au besoin, comme "need", "tell", "see", "give", "go", ou encore "baby", très récurrent. Ce vocabulaire, comme dans le genre pop, traduit des interactions interpersonnelles, souvent amoureuses ou sensuelles, avec une prédominance de formulations simples et émotionnelles. La proximité lexicale entre pop et rnb est manifeste, ce qui rend leur séparation algorithmique potentiellement difficile.
+
+En revanche, le genre rap se distingue immédiatement par un lexique plus brut, plus oral, et parfois explicitement transgressif. Des mots comme "f*ck", "sh*t", "n*gga", ou "b*tch" sont visuellement dominants. À côté de cela, on note aussi une fréquence importante de termes liés à l’action ou à l’affirmation de soi comme "back", "hit", "real", "money", "put". Ce champ lexical s’éloigne fortement des deux autres, en s’appuyant sur une langue plus familière, plus directe, souvent issue du registre de l’oralité urbaine.
+
+Ces différences, visibles dès cette première observation, permettent d’anticiper certains comportements des classifieurs. La séparation du genre rap devrait être facilitée par son vocabulaire spécifique. En revanche, la distinction entre pop et rnb, qui partagent un fond lexical et thématique très proche, constituera probablement la principale difficulté pour les modèles.
 
 ## Premier test d'algo de classification : Analyse des résultats du modèle Random Forest
 
